@@ -1,0 +1,14 @@
+Tournament Parameters:
+Max Games (M): 3
+Play Win Chance: 0.6
+Losers First: true
+Early Termination: true
+Proportion of matches won by Player 1: 0.6666666666666666
+Average match length: 1.6666666666666667
+Proportion of games won by the 'on the play' player: 0.4
+1	 	2	 	1	 	1	 
+
+1	 	1	 	-	 	1	 
+
+2	 	2	 	-	 	2
+
