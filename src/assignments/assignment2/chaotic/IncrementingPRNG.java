@@ -35,7 +35,7 @@ public class IncrementingPRNG implements PRNG{
     public int nextInt( int lowerBound,  int upperBound) throws PRNGException {
         if(upperBound <= lowerBound) throw new PRNGException("Upper bound must be larger than lower bound");
 
-        return (lowerBound + nextInt()) % (upperBound - lowerBound);
+        return lowerBound + nextInt() % (upperBound - lowerBound);
     }
 
     @Override

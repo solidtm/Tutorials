@@ -26,14 +26,14 @@ public class BasicPRNG implements PRNG {
 
     @Override
     public int nextInt(int upperBound) throws PRNGException {
-        if(upperBound <=0 ) throw new PRNGException("upperbound must be positive");
+        if(upperBound <= 0) throw new PRNGException("upperbound must be positive");
         return nextInt (0, upperBound) ;
     }
 
     @Override
-    public int nextInt(int upperBound, int lowerBound) throws PRNGException {
+    public int nextInt(int lowerBound, int upperBound) throws PRNGException {
         if(upperBound <= lowerBound) throw new PRNGException("upperbound must be larger than lowerbound");
-        return (lowerBound + nextInt()) % (upperBound - lowerBound);
+        return lowerBound + nextInt() % (upperBound - lowerBound);
     }
 
     @Override

@@ -22,26 +22,25 @@ public class TimelyPRNG implements PRNG{
     @Override
     public int nextInt() {
         long currentNanoTime = System.nanoTime();
-        state += (currentNanoTime - lastNanoTime) * seed;
+        state += (currentNanoTime - lastNanoTime) + seed;
         lastNanoTime = currentNanoTime;
         return (int) (state % Integer.MAX_VALUE);
     }
 
     @Override
     public int nextInt(int upperBound) throws PRNGException{
-        if(upperBound <=0) throw new PRNGException("Upper bound must be positive");
+        if(upperBound <= 0) throw new PRNGException("Upper bound must be positive");
         return nextInt(0, upperBound);
     }
 
     @Override
-    public int nextInt(int upperBound, int lowerBound) throws PRNGException {
+    public int nextInt(int lowerBound, int upperBound) throws PRNGException {
         if(upperBound <= lowerBound) throw new PRNGException("Upper bound must be larger than lower bound");
-        return (lowerBound + nextInt()) % (upperBound - lowerBound);
+        return lowerBound + nextInt() % (upperBound - lowerBound);
     }
 
     @Override
     public double nextDouble() {
-
         return nextInt() / (double)Integer.MAX_VALUE;
     }
 }
