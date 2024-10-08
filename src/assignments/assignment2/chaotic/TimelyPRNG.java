@@ -28,17 +28,20 @@ public class TimelyPRNG implements PRNG{
     }
 
     @Override
-    public int nextInt(int upperBound) {
-        return 0;
+    public int nextInt(int upperBound) throws PRNGException{
+        if(upperBound <=0) throw new PRNGException("Upper bound must be positive");
+        return nextInt(0, upperBound);
     }
 
     @Override
-    public int nextInt(int upperBound, int lowerBound) {
-        return 0;
+    public int nextInt(int upperBound, int lowerBound) throws PRNGException {
+        if(upperBound <= lowerBound) throw new PRNGException("Upper bound must be larger than lower bound");
+        return lowerBound + nextInt();
     }
 
     @Override
     public double nextDouble() {
-        return 0;
+
+        return nextInt() / (double)Integer.MAX_VALUE;
     }
 }
