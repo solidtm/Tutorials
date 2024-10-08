@@ -36,7 +36,7 @@ public class TimelyPRNG implements PRNG{
     @Override
     public int nextInt(int upperBound, int lowerBound) throws PRNGException {
         if(upperBound <= lowerBound) throw new PRNGException("Upper bound must be larger than lower bound");
-        return lowerBound + nextInt();
+        return (lowerBound + nextInt()) % (upperBound - lowerBound);
     }
 
     @Override
