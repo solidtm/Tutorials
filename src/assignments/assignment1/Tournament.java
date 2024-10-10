@@ -1,7 +1,6 @@
 package assignments.assignment1;
 
 import BasicIO.*;
-
 import java.util.Arrays;
 
 public class Tournament {
@@ -39,12 +38,12 @@ public class Tournament {
         form.close();
     }
 
-    private static boolean simulateGame(double playWinChance, boolean isP1OnPlay) {
+    private boolean simulateGame(double playWinChance, boolean isP1OnPlay) {
         return Math.random() < (isP1OnPlay ? playWinChance : 1 - playWinChance);
     }
 
     // Method to simulate an individual match
-    public static int[] simulateMatch(int maxGames, double playWinChance, boolean losersFirst, boolean earlyTermination) {
+    public int[] simulateMatch(int maxGames, double playWinChance, boolean losersFirst, boolean earlyTermination) {
         int gamesNeededToWin = (maxGames / 2) + 1; // Best N of M
         int[] match = new int[maxGames + 1]; // Last entry is the winner, rest are game results
 
@@ -114,7 +113,7 @@ public class Tournament {
     }
 
     // Method to analyze the results of the tournament
-    public static void analyzeResults(int[][] matchResults) {
+    public void analyzeResults(int[][] matchResults) {
         int matchesWonByP1 = 0;
         int totalGamesPlayed = 0;
         int gamesWonOnPlay = 0;
@@ -146,7 +145,7 @@ public class Tournament {
         System.out.println("Proportion of games won by the 'on the play' player: " + proportionGamesOnPlayWon);
     }
 
-    public static void logResults(int[][] matchResults, String filename, int maxGames, double playWinChance, boolean losersFirst, boolean earlyTermination) {
+    public void logResults(int[][] matchResults, String filename, int maxGames, double playWinChance, boolean losersFirst, boolean earlyTermination) {
         ASCIIOutputFile output = new ASCIIOutputFile(filename);
 
         output.writeLine("Tournament Parameters:");
