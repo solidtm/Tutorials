@@ -2,7 +2,38 @@ package tutorials;
 
 public class Tutorial8 {
     public static void main(String[] args) {
+        System.out.println(containsNearbyDuplicate(new int[]{1,0,1,1}, 1));
+    }
 
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
+        int[] storage = new int[nums.length];
+        boolean result = false;
+
+        for(int i = 0; i < storage.length; i++){
+            storage[i] = -1;
+        }
+
+        for(int i = 0; i < nums.length; i++){
+            int curr = nums[i];
+
+            int index = isSeen(curr, storage);
+            if(index != -1 && Math.abs(i - index) <= k){
+                System.out.println(Math.abs(i - index));
+                return true;
+            }
+            else storage[i] = curr;
+        }
+
+        return false;
+    }
+
+    public static int isSeen(int value, int[] storage){
+        for(int i = 0; i < storage.length; i++){
+            int curr = storage[i];
+            if(curr == value) return i;
+        }
+
+        return -1;
     }
 }
 
