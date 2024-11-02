@@ -57,9 +57,3 @@ public class Tutorial8 {
 
  */
 
-class Node {
-    int value;
-    Node next;
-    Node prev;
-}
-

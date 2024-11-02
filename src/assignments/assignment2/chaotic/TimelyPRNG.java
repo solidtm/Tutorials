@@ -22,7 +22,7 @@ public class TimelyPRNG implements PRNG{
     @Override
     public int nextInt() {
         long currentNanoTime = System.nanoTime();
-        state += (currentNanoTime - lastNanoTime) + seed;
+        state += (currentNanoTime - lastNanoTime) + seed;  // 1.5 - 0.5 + 0.5,
         lastNanoTime = currentNanoTime;
         return (int) (state % Integer.MAX_VALUE);
     }
