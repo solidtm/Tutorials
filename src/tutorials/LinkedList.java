@@ -1,26 +1,12 @@
-package tutorials.linkedlist;
+package tutorials;
 
 
 //    *
 //     * Definition for singly-linked list.
 
 public class LinkedList {
-    protected class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
-
-        Node(int val, Node next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-    private Node head;
-    private Node tail;
+    private Node<Integer> head;
+    private Node<Integer> tail;
     private int size;
 
 
@@ -30,7 +16,7 @@ public class LinkedList {
 
 //    insert at front of the linked list
     public void insertFirst(int val) {
-        Node node = new Node(val); //create a node with the value you want to insert
+        Node<Integer> node = new Node<>(val); //create a node with the value you want to insert
         node.next = head;
         head = node;
 
@@ -47,7 +33,7 @@ public class LinkedList {
             return;
         }
 
-        Node node = new Node(val); //O(1)
+        Node<Integer> node = new Node<>(val); //O(1)
         tail.next = node;
         tail = node;
         size++;
@@ -112,12 +98,12 @@ public class LinkedList {
         return val;
     }
 
-    public int delete(int index){
+    public int delete(Integer index){
         if(index == 1) return deleteFirst();
         if(index == size - 1) return deleteLast();
 
-        Node previous = get(index - 1);   //node points to the previous index before the index in the ist
-        int val = previous.next.val;
+        Node<Integer> previous = get(index - 1);   //node points to the previous index before the index in the ist
+        Integer val = (Integer) previous.next.val;
         previous.next = previous.next.next;
 
         return val;
@@ -134,8 +120,8 @@ public class LinkedList {
     }
 
 
-    public Node find(int val){   //gets the node at any index.
-        Node node = head;
+    public Node<Integer> find(int val){   //gets the node at any index.
+        Node<Integer> node = head;
 
         while(node != null){
             if(node.val == val){

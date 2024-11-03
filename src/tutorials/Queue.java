@@ -3,21 +3,10 @@ package tutorials;
 //Implementing a queue using LinkedList
 //NB: Queue uses FIFO protocol.
 public class Queue {
-    protected class Node{
-        String value;
-        Stack.Node next;
-
-        Node(String val){ this.value = val;}
-
-        Node(String val, Stack.Node next){
-            this.value = val;
-            this.next = next;
-        }
-    }
 
 
-    private  Node first;
-    private  Node last;
+    private  Node<String> first;
+    private  Node<String> last;
     private  int length;
 
     public Queue() {
@@ -26,7 +15,7 @@ public class Queue {
         this.length = 0;
     }
 
-    public Node peek(){
+    public Node<String> peek(){
         if (this.first == null){
             return null;
         }
@@ -34,7 +23,7 @@ public class Queue {
     }
 
     public Queue enqueue(String value){
-        Node newNode = new Node(value);
+        Node<String> newNode = new Node<>(value);
         if (this.length == 0){
             System.out.println("Adding " + value);
             this.first = newNode;
@@ -56,13 +45,13 @@ public class Queue {
 
 //        If there is only one item in the list
         if (this.first == this.last){
-            System.out.println("Removing " + this.first.value);
+            System.out.println("Removing " + this.first.val);
             this.last = null;
             this.first = null;
             this.length--;
             return null;
         }
-        System.out.println("Removing " + this.first.value);
+        System.out.println("Removing " + this.first.val);
 //        this.first = this.first.next;
         this.length--;
         return this;
