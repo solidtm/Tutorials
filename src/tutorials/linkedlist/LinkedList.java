@@ -1,23 +1,23 @@
-package tutorials;
+package tutorials.linkedlist;
 
-class Node {
-    int val;
-    Node next;
-
-    Node(int val) {
-        this.val = val;
-    }
-
-    Node(int val, Node next) {
-        this.val = val;
-        this.next = next;
-    }
-}
 
 //    *
 //     * Definition for singly-linked list.
 
 public class LinkedList {
+    protected class Node {
+        int val;
+        Node next;
+
+        Node(int val) {
+            this.val = val;
+        }
+
+        Node(int val, Node next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
 
     private Node head;
     private Node tail;
