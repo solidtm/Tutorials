@@ -20,7 +20,7 @@ public class BasicPRNG implements PRNG {
 
     @Override
     public int nextInt() {
-        state = (1103515245 * state + 12345) %2147483647;
+        state = (1103515245 * state + 12345) % 2147483647;
         return (int) state;
     }
 

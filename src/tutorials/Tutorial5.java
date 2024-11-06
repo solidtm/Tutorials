@@ -34,6 +34,7 @@ interface Vehicle{
 
     String getVehicleModel(String description);
 }
+
 class Boat implements Vehicle{
 
     @Override
