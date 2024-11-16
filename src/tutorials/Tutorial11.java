@@ -1,11 +1,15 @@
 package tutorials;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Tutorial11 {
     public static void main(String[] args) {
 //        printNums(1, 10);
 //        fibonacciIterative(10);
 //        System.out.println(fibonacciRecursive(7));
-        System.out.println( factRecursive(10));
+//        System.out.println( factRecursive(10));
+        System.out.println(findNumbers(new int[]{1,2,3,4,5}, 7));
     }
 
     private static void printNums(int start, int n){
@@ -78,5 +82,19 @@ public class Tutorial11 {
      fact(n) = n + fact(n - 1)
      5! = 5+4+3+2+1 = 15
      4! = 4+3+2+1
+
+
+//Given an array, find 2 number that sum up to a specific target and return true or false if the numbers exist.
 */
+
+    public static boolean findNumbers(int[] array, int target){
+        Set<Integer> set = new HashSet<>();
+
+        for (int currNum : array) {
+            if (set.contains(target - currNum)) return true;
+            else set.add(currNum);
+        }
+
+        return false;
+    }
 }
