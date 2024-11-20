@@ -117,3 +117,68 @@ class Pair<K, V>{
 
 
 
+/*class Stack<T> {
+    private ArrayList<T> elements;
+
+    public Stack() {
+        elements = new ArrayList<>();
+    }
+
+    public void push(T item) {
+        elements.add(item);
+    }
+
+    public T pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return elements.remove(elements.size() - 1);
+    }
+
+    public T peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return elements.get(elements.size() - 1);
+    }
+
+    public boolean isEmpty() {
+        return elements.isEmpty();
+    }
+
+    public int size() {
+        return elements.size();
+    }
+
+    public void clear() {
+        elements.clear();
+    }
+
+    @Override
+    public String toString() {
+        return elements.toString();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<String> stringStack = new Stack<>();
+        stringStack.push("Hello");
+        stringStack.push("World");
+        System.out.println("String Stack: " + stringStack);
+
+        stringStack.pop();
+        System.out.println("String Stack after pop: " + stringStack);
+
+        Stack<Integer> intStack = new Stack<>();
+        intStack.push(1);
+        intStack.push(2);
+        intStack.push(3);
+        System.out.println("Integer Stack: " + intStack);
+
+        System.out.println("Top element: " + intStack.peek());
+        intStack.pop();
+        System.out.println("Integer Stack after pop: " + intStack);
+    }
+}
+*/
