@@ -7,10 +7,6 @@
 package tutorials;
 public class ClassWork {
 
-    public static int findTarget (){
-
-    }
-
     public static void main(String[] args) {
     }
 
